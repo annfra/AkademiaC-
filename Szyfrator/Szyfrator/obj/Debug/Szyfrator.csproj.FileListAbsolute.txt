@@ -1,0 +1,14 @@
+D:\VS2015\Szyfrator\Szyfrator\bin\Debug\Szyfrator.exe.config
+D:\VS2015\Szyfrator\Szyfrator\bin\Debug\Szyfrator.exe
+D:\VS2015\Szyfrator\Szyfrator\bin\Debug\Szyfrator.pdb
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator.csprojResolveAssemblyReference.cache
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\MainWindow.baml
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\MainWindow.g.cs
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\App.g.cs
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator_MarkupCompile.cache
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator.g.resources
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator.Properties.Resources.resources
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator.csproj.GenerateResource.Cache
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator.exe
+D:\VS2015\Szyfrator\Szyfrator\obj\Debug\Szyfrator.pdb
+D:\VS2015\Szyfrator\Szyfrator\bin\Debug\BouncyCastle.CryptoExt.dll
