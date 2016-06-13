@@ -52,7 +52,7 @@ namespace Szyfrator
             return keygen.GenerateKey();
         }
 
-        private void Encryption(Stream inputStream, int subBlockSize)
+        public void Encryption(Stream inputStream, int subBlockSize)
         {
             bool ifBlock = false;
 

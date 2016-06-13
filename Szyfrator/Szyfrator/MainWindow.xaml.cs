@@ -88,7 +88,6 @@ namespace Szyfrator
                 byte[] passBytes = System.Text.Encoding.UTF8.GetBytes(passBox.Password.ToString());
                 cipherTmp.Init(true, new KeyParameter(passBytes));
 
-                //zamiana na stringa
                 var sw2 = new System.IO.StringWriter();
                 var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
                 xs.Serialize(sw2, newPrivKey.Value);
@@ -122,11 +121,13 @@ namespace Szyfrator
         {
             Cipher cipher;
             if (comboBoxAlg.SelectedIndex == (int)Algorithms.DES)
-                cipher = new Cipher(64, "DES", comboBoxCipherMode.SelectedItem.ToString());
+                cipher = new Cipher(64, "DES", comboBoxCipherMode.Text);
             else
-                cipher = new Cipher(128, comboBoxAlg.SelectedItem.ToString(), comboBoxCipherMode.SelectedItem.ToString()); //tu kropka
-
-            XmlFile xml = new XmlFile(System.AppDomain.CurrentDomain.BaseDirectory,"xmlFileEncryption");
+                cipher = new Cipher(128, comboBoxAlg.Text, comboBoxCipherMode.Text);
+            cipher.Encryption(inputStream, int.Parse(subBlockSize.Content.ToString()));
+            XmlFile xmlFile = new XmlFile(textBoxOutputE.Text,"xmlFileEncryption");
+            xmlFile.CreateXml(listViewReceivers, comboBoxAlg.Text, comboBoxCipherMode.Text);
+            xmlFile.SaveXml(cipher.EncryptedData);
 
             textBlockOutput.Text = "End of encryption";
         }

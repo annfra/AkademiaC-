@@ -4,13 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Xml;
 
 namespace Szyfrator
 {
     interface IXmlFile
     {
-        void CreateXml(string[] receivers, string algorithm, string cipherMode);
+        void CreateXml(ListView receivers, string algorithm, string cipherMode);
         void SaveXml(byte[] encryptedData);
     }
     class XmlFile : IXmlFile
@@ -21,10 +22,10 @@ namespace Szyfrator
         public XmlFile(string path, string name)
         {
             this.Name = name;
-            this.Path = path + "\\" + name;
+            this.Path = path;
         }
 
-        public void CreateXml(string[] receivers, string algorithm, string cipherMode)
+        public void CreateXml(ListView receivers, string algorithm, string cipherMode)
         {
             XmlTextWriter Writer = new XmlTextWriter(this.Path, null);
 
@@ -40,11 +41,11 @@ namespace Szyfrator
             Writer.WriteString(cipherMode);
             Writer.WriteEndElement();
             Writer.WriteStartElement("ApprovedUsers");
-            foreach (string rec in receivers)
+            foreach (PublicKey rec in receivers.SelectedItems)
             {
                 Writer.WriteStartElement("User");
                 Writer.WriteStartElement("Name");
-                Writer.WriteString(rec);
+                Writer.WriteString(rec.Name);
                 Writer.WriteEndElement();
                 Writer.WriteEndElement();
                 Writer.WriteEndElement();
